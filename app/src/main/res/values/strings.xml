@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">NeuroSurvey</string>
+    <string name="quest1">Have you had any type of facial pain since your last operation?</string>
+    <string name="quest2a">Does the pain you have now, feel the same as it did before your operation?</string>
+    <string name="quest2b">Indicate how it is different.</string>
+    <string name="quest3">Following your most recent operation, when did you first experience the pain?</string>
+    <string name="quest4">Is the pain continuous?</string>
+    <string name="quest5">How long does a single incident of pain last?</string>
+    <string name="quest6">How long do you usually go without any episodes of pain?</string>
+    <string name="quest7">How intense does the pain feel?</string>
+    <string name="quest8">Where is the pain?</string>
+    <string name="quest9">Do any of these activities set the pain off?</string>
+    <string name="quest10">Have you taken any medica</string>
+    <string name="quest11">Roughly how often in the past month have you been taking medication?</string>
+    <string name="quest12">What drugs are you taking, and how many tablets a day?</string>
+    <string name="quest13a">If you had numbness before this operation has it changed as a result of this operation?</string>
+    <string name="quest13b">Following the operation, does any part of your face feel numb that was not numb before?</string>
+    <string name="quest14">How soon after the operation did the numbness begin?</string>
+    <string name="quest15">How severe is the numbness (compared to stages of a dental injection wearing off)?</string>
+    <string name="quest16">How painful is it to touch this area of numbness?</string>
+    <string name="quest17">What degree of burning or other altered sensation do you have on the same side of your face as the operation site?</string>
+    <string name="quest18">Did the operation result in any hearing loss?</string>
+    <string name="quest19">Has the hearing loss changed in any way?</string>
+    <string name="quest20">Do you feel unsteady on your feet as a result of the operation?</string>
+    <string name="quest21">Do you suffer from more dizziness than usual following this operation?</string>
+    <string name="quest22">Do you suffer from more headaches than usual following this operation?</string>
+    <string name="quest23">Following the operation do you have any difficulty with eating that you didn’t have before?</string>
+    <string name="quest24">Have you got any problems with your vision that you didn’t have before this operation? (please tick all that apply)</string>
+    <string name="quest25">Have you got any other complications that we have not mentioned? If yes, please list.</string>
+    <string name="quest26">Please state how the complications (from questions 13–25) currently affect the quality of your life, if at all:</string>
+    <!-- TODO: add states!!! -->
+    <string name="quest27">Looking back now, how would you consider the timing of your surgery?</string>
+    <string name="quest28">Overall how satisfied are you with your current situation in comparison to before the operation?</string>
+    <string name="quest29">In the last month have you felt a lack of pleasure in life?</string>
+    <string name="quest30">In the last month have you felt depressed?</string>
+    <string name="quest31">Have you had any treatments other than medications for your trigeminal neuralgia in the past year? Please give details if yes.</string>
+
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="notSure">Not sure</string>
+</resources>
