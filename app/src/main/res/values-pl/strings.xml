@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NeuroSurvey</string>
+    <string name="no">Nie</string>
+    <string name="notSure">Nie wiem</string>
+    <string name="yes">Tak</string>
+    <string name="quest1">1. Czy wystąpił jakikolwiek ból twarzy po ostatniej operacji?</string>
+    <string name="quest10">10. Czy brałeś jakieś leki przeciwdziałające bólowi twarzy po ostatniej operacji?</string>
+    <string name="quest11">11. Jak często w ostatnich miesiącach brałeś lekarstwa?</string>
+    <string name="quest12">12. Jakie bierzesz leki i w jakiej ilości na dzień?</string>
+    <string name="quest13a">13a. Czy miałeś jakieś zdrętwienie twarzy przed operacją, które uległo zmianie?</string>
+    <string name="quest13b">13b. Czy po ostatniej operacji pojawiło się odrętwienie innego obszaru twarzy niż dotychczas?</string>
+    <string name="quest14">14. Po jakim czasie od ostatniej operacji pojawiło się odrętwienie twarzy?</string>
+    <string name="quest15">15. Jak silne jest odrętwienie twarzy (w porównaniu do stopni odrętwienia po zastrzyku stomatologicznym)?</string>
+    <string name="quest16">16. Jak bolesny jest dotyk odrętwiałego obszaru twarzy?</string>
+    <string name="quest17">17. W jakim stopniu odczuwasz uczucie palenia/inne na ostanio operowanej stronie twarzy?</string>
+    <string name="quest18">18. Czy po operacji pojawiła się utrata słuchu?</string>
+    <string name="quest19">19. Czy stopień utraty słuchu uległ zmianie?</string>
+    <string name="quest20">20. Czy po operacji czujesz się niepewnie na nogach?</string>
+    <string name="quest21">21. Czy cierpisz z powodu mocniejszych zawrotów głowy po ostatniej operacji?</string>
+    <string name="quest22">22. Czy cierpisz z powodu mocniejszych / częstszych bólów głowy po ostatniej operacji?</string>
+    <string name="quest23">23. Czy po ostatniej operacji pojawiły się nowe trudności z jedzeniem?</string>
+    <string name="quest24">24. Czy masz jakiekolwiek problemy z widzeniem, których nie miałeś przed operacją?</string>
+    <string name="quest25">25. Czy pojawiły się jakiekolwiek inne komplikacje, których dotychczas nie wymieniłeś? Jeśli tak, wymień je.</string>
+    <string name="quest26">26. Oceń, w jakim stopniu powstałe ostatnio komplikacje utrudniają Ci życie: (bierz pod uwagę pytania 13-25)</string>
+    <string name="quest27">27. Patrząc w przeszłość, jak byś ocenił czas Twojej operacji?</string>
+    <string name="quest28">28. Oceń, w jakim stopniu jesteś usatysfakcjonowany z aktualnej sytuacji (w porównaniu do tej sprzed operacji):</string>
+    <string name="quest29">29. Czy w ostatnich miesiącach odczuwałeś brak przyjemności z życia?</string>
+    <string name="quest2a">2a. Czy ból który teraz odczuwasz jest taki sam jak przed operacją?</string>
+    <string name="quest2b">2b. Określ,w jaki sposób ten ból się zmienił.</string>
+    <string name="quest3">3. Biorąc pod uwagę ostatnią operację, kiedy po raz pierwszy doświadczyłeś tego bólu?</string>
+    <string name="quest30">30. Czy w ostatnich miesiącach czułeś się przygnębiony?</string>
+    <string name="quest31">31. Czy w ostatnim roku byłeś poddawany innemu leczeniu niż leczeniu na neuralgię nerwu trójdzielnego? Jeśli tak, podaj szczegóły.</string>
+    <string name="quest4">4. Czy ten ból jest ciągły?</string>
+    <string name="quest5">5. Jak długo trwa jeden atak bólu?</string>
+    <string name="quest6">6. Ile trwała najdłuższa przerwa pomiędzy atakami bólu?</string>
+    <string name="quest7">7. Określ intensywność bólu:</string>
+    <string name="quest8">8. Gdzie znajduje się bolące miejsce?</string>
+    <string name="quest9">9. Czy któraś z poniższych czynności wywołuje ból?</string>
+</resources>

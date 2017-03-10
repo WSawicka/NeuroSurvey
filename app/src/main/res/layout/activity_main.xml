@@ -22,9 +22,8 @@
             android:text="Apka Zdrapka"
             android:textSize="35sp"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="0"
             android:layout_marginBottom="30dp"/>
@@ -32,8 +31,7 @@
         <Button
             android:id="@+id/newTestButton"
             android:text="New test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="1"
             android:onClick="newTest"/>
@@ -41,17 +39,22 @@
         <Button
             android:id="@+id/recentButton"
             android:text="Recent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="2"/>
 
         <Button
-            android:id="@+id/settingsButton"
-            android:text="Settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/exportButton"
+            android:text="Export"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="3"/>
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:text="Settings"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"/>
     </GridLayout>
 </RelativeLayout>

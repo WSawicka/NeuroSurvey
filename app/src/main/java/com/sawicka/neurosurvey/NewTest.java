@@ -1,9 +1,9 @@
 package com.sawicka.neurosurvey;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class NewTest extends AppCompatActivity {
+public class NewTest extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

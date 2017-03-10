@@ -9,408 +9,1079 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sawicka.neurosurvey.NewTest">
+    tools:context="com.sawicka.neurosurvey.NewTest"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp">
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:orientation="vertical">
                 <TextView
-                    android:layout_row="0"
-                    android:layout_columnSpan="2"
                     android:text="@string/quest1"
-                    android:textSize="17sp"/>
-                <CheckBox
-                    android:text="@string/no"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:layout_columnWeight="1"/>
-                <CheckBox
-                    android:text="@string/yes"
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:layout_columnWeight="1"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_height="wrap_content" android:layout_width="match_parent" />
+                <RadioGroup
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:text="@string/no"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton
+                        android:text="@string/yes"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question2a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp">
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:orientation="vertical">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest2a"
-                    android:textSize="17sp"/>
-                <CheckBox
-                    android:text="@string/no"
-                    android:layout_row="1"
-                    android:layout_column="0"
-                    android:layout_columnWeight="1"/>
-                <CheckBox
-                    android:text="@string/yes"
-                    android:layout_row="1"
-                    android:layout_column="1"
-                    android:layout_columnWeight="1"/>
-                <CheckBox
-                    android:text="@string/notSure"
-                    android:layout_row="1"
-                    android:layout_column="2"
-                    android:layout_columnWeight="1"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:text="@string/no"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton
+                        android:text="@string/yes"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton
+                        android:text="@string/notSure"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question2b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest2a"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Still 'shooting' but less severe"/>
+                    <RadioButton
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Still 'shooting' but more severe"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="It is dull / achy now" />
+                    <RadioButton
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Other:"/>
+                    <EditText
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp">
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:orientation="vertical">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest3"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Immediately"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1-6 months after"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7-12 months after"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1-2 years later"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3-4 years later"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5-6 years later"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6-7 years later"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8-9 years later"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Over 10 years later"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest4"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:text="@string/no"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton
+                        android:text="@string/yes"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest5"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:text="Seconds"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:text="Minutes"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:text="Hours"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:text="Days"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest6"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RadioButton
+                        android:text="Minutes"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:text="Hours"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:text="Days"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:text="Weeks"
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest7"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="7"/>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="0" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="1" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="2" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="3" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="4" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="5" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="6" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="7" android:textColor="@color/grey"/>
+                </LinearLayout>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest8"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Same area as before operation"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Different area than before operation"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest9"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Washing face"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Brushing teeth"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Wind"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Cold"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Touch"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Laughing"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Talking"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Eating"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Other: "/>
+                <EditText
+                    android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest10"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Yes, as needed"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Yes, regularly"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest11"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Daily"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="2-3 times a week"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Less than 1/week"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Other: "/>
+                    <EditText
+                        android:layout_width="match_parent" android:layout_height="wrap_content" />
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest12"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <!--TODO: Lista leków i ich ilości-->
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question13a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest13a"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Yes, worse than before"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Yes, same than before"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question13b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest13b"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/yes"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest14"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Immediately"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="1-2 months later"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="3-5 months later"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="6 or more months later"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest15"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="7"/>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="0" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="1" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="2" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="3" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="4" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="5" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="6" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="7" android:textColor="@color/grey"/>
+                </LinearLayout>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest16"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="7"/>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="0" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="1" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="2" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="3" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="4" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="5" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="6" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="7" android:textColor="@color/grey"/>
+                </LinearLayout>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest17"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="7"/>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="0" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="1" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="2" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="3" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="4" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="5" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="6" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="7" android:textColor="@color/grey"/>
+                </LinearLayout>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest18"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="7"/>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="0" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="1" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="2" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="3" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="4" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="5" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="6" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="7" android:textColor="@color/grey"/>
+                </LinearLayout>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest19"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Lasted 1-6 months but now it's gone"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Lasted 6+ months but now it's gone"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="It's still there, but has improved"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="It's still the same"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="It's getting worse"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest20"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/yes"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest21"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/yes"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question22"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest22"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/yes"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question23"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest23"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Yes"/>
+                </RadioGroup>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="With chewing food"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="With controlling dentures"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="With dribbling"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="With excessive bitting of cheek"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="With muscules going into spasm"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Other: "/>
+                <EditText
+                    android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question24"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest24"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/yes"/>
+                </RadioGroup>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Blurred"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Bits floating"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Eyes do not focus well"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Seeing double"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Watering a lot"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Eye infection"/>
+                <CheckBox
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Other: "/>
+                <EditText
+                    android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question25"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest25"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <!--TODO: Lista zażaleń-->
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question26"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest26"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <!--TODO: by to ładnie wyglądało i dobrze się użytkowało-->
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question27"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest27"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Done at the right time"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Should have done earlier"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Should have done later"/>
+                    <RadioButton
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="Should have never been done"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question28"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest28"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <SeekBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="7"/>
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="0" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="1" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="2" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="3" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="4" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="5" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="6" android:textColor="@color/grey"/>
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="7" android:textColor="@color/grey"/>
+                </LinearLayout>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question29"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest29"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent"  android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent"  android:layout_height="wrap_content"
+                        android:text="@string/yes"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question30"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest30"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent"  android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent"  android:layout_height="wrap_content"
+                        android:text="@string/yes"/>
+                </RadioGroup>
+            </LinearLayout>
 
-            <GridLayout
+            <LinearLayout
                 android:id="@+id/question31"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:layout_marginBottom="25dp">
                 <TextView
-                    android:layout_row="0"
                     android:text="@string/quest31"
-                    android:textSize="17sp"/>
-            </GridLayout>
+                    android:textSize="17sp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <RadioGroup
+                    android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <RadioButton
+                        android:layout_width="match_parent"  android:layout_height="wrap_content"
+                        android:text="@string/no"/>
+                    <RadioButton
+                        android:layout_width="match_parent"  android:layout_height="wrap_content"
+                        android:text="@string/yes"/>
+                </RadioGroup>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Microvascular decompression"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Posterior sensory rhizotomy"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Radiofrequency thermocoagulation"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Glycerol injection"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Balloon compression"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Gamma knife"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Laser"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Acupuncture"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Cryosurgery"/>
+                <CheckBox
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="Other: "/>
+                <EditText
+                    android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
