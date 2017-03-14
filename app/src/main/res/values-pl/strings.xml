@@ -104,4 +104,8 @@
     <string name="gamma_knife">Gamma knife</string>
     <string name="rhizotomy">Posterior sensory rhizotomy</string>
     <string name="baloon_compression">Baloon compression</string>
+    <string name="name">Imię i nazwisko</string>
+    <string name="operation_date">Data operacji</string>
+    <string name="gender">Płeć</string>
+    <string name="age">Wiek</string>
 </resources>

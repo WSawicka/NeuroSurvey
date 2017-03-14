@@ -34,6 +34,10 @@
     <string name="quest30"/>
     <string name="quest31"/>
 
+    <string name="name"/>
+    <string name="age"/>
+    <string name="gender"/>
+    <string name="operation_date"/>
     <string name="no"/>
     <string name="yes"/>
     <string name="yes_as_needed"/>

@@ -104,4 +104,8 @@
     <string name="yes_regularly">Yes, regularly</string>
     <string name="yes_same">Yes, same than before</string>
     <string name="yes_worse">Yes, worse than before</string>
+    <string name="name">Name and surname</string>
+    <string name="operation_date">Date of operation</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
 </resources>
