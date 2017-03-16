@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sawicka.neurosurvey.NewTest"
+    tools:context="com.sawicka.neurosurvey.NewTestActivity"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:layout_alignParentTop="true"
@@ -19,903 +19,264 @@
         android:layout_width="match_parent" android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="@string/name"/>
-        <EditText
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:inputType="text"/>
-
-        <TextView
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="@string/age"/>
-        <TextView
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="@string/gender"/>
-        <TextView
-            android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:text="@string/operation_date"/>
-
-
         <TextView android:text="@string/quest1"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp"
             android:layout_height="wrap_content" android:layout_width="match_parent" />
-        <RadioGroup android:id="@+id/quest1_group"
-            android:layout_width="fill_parent" android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <RadioButton android:id="@+id/quest1_ans1"
-                android:text="@string/no"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:onClick="onClick_1"/>
-            <RadioButton android:id="@+id/quest1_ans2"
-                android:text="@string/yes"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:onClick="onClick_1"/>
-        </RadioGroup>
-
-        <LinearLayout android:id="@+id/questions_2_12"
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q1"
             android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:visibility="gone">
-            <LinearLayout android:id="@+id/questions_2_4"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView android:text="@string/quest2a"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/quest2a_group"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <RadioButton android:id="@+id/quest2a_ans1"
-                        android:text="@string/no"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/quest2a_ans2"
-                        android:text="@string/yes"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/quest2a_ans3"
-                        android:text="@string/notSure"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                </RadioGroup>
+            android:choiceMode="singleChoice" />
 
-                <TextView android:text="@string/quest2a"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/quest2b_group"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <RadioButton android:id="@+id/quest2b_ans1"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="@string/shooting_less"/>
-                    <RadioButton android:id="@+id/quest2b_ans2"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="@string/shooting_more"/>
-                    <RadioButton android:id="@+id/quest2b_ans3"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/dull_achy" />
-                    <RadioButton android:id="@+id/quest2b_ans4"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="@string/other"/>
-                    <EditText
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                </RadioGroup>
-
-                <TextView android:text="@string/quest3"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/quest3_group"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/quest3_ans1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/immediately"/>
-                    <RadioButton android:id="@+id/quest3_ans2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/after_1_6"/>
-                    <RadioButton android:id="@+id/quest3_ans3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/after_7_12"/>
-                    <RadioButton android:id="@+id/quest3_ans4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/later_1_2_years"/>
-                    <RadioButton android:id="@+id/quest3_ans5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/later_3_4_years"/>
-                    <RadioButton android:id="@+id/quest3_ans6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/later_5_6_years"/>
-                    <RadioButton android:id="@+id/quest3_ans7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/later_6_7_years"/>
-                    <RadioButton android:id="@+id/quest3_ans8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/later_8_9_years"/>
-                    <RadioButton android:id="@+id/quest3_ans9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/later_10_years"/>
-                </RadioGroup>
-
-                <TextView android:text="@string/quest4"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/quest4_group"
-                    android:layout_width="fill_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <RadioButton android:id="@+id/quest4_ans1"
-                        android:text="@string/no"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:onClick="onClick_4"/>
-                    <RadioButton android:id="@+id/quest4_ans2"
-                        android:text="@string/yes"
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:onClick="onClick_4"/>
-                </RadioGroup>
-            </LinearLayout>
-
-            <LinearLayout android:id="@+id/questions_5_6"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:visibility="gone">
-                <TextView android:text="@string/quest5"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/quest5_group"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <RadioButton android:id="@+id/quest5_ans1"
-                        android:text="@string/seconds"
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                    <RadioButton android:id="@+id/quest5_ans2"
-                        android:text="@string/minutes"
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                    <RadioButton android:id="@+id/quest5_ans3"
-                        android:text="@string/hours"
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                    <RadioButton android:id="@+id/quest5_ans4"
-                        android:text="@string/days"
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                </RadioGroup>
-
-                <TextView android:text="@string/quest6"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/quest6_group"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <RadioButton android:id="@+id/quest6_ans1"
-                        android:text="@string/minutes"
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                    <RadioButton android:id="@+id/quest6_ans2"
-                        android:text="@string/hours"
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                    <RadioButton android:id="@+id/quest6_ans3"
-                        android:text="@string/days"
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                    <RadioButton android:id="@+id/quest6_ans4"
-                        android:text="@string/weeks"
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <LinearLayout android:id="@+id/questions_7_10"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:visibility="gone">
-                <TextView android:text="@string/quest7"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <SeekBar
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:max="7"/>
-                <LinearLayout
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="0" android:textColor="@color/grey"/>
-                    <TextView
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="1" android:textColor="@color/grey"/>
-                    <TextView
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="2" android:textColor="@color/grey"/>
-                    <TextView
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="3" android:textColor="@color/grey"/>
-                    <TextView
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="4" android:textColor="@color/grey"/>
-                    <TextView
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="5" android:textColor="@color/grey"/>
-                    <TextView
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="6" android:textColor="@color/grey"/>
-                    <TextView
-                        android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
-                        android:text="7" android:textColor="@color/grey"/>
-                </LinearLayout>
-
-                <TextView android:text="@string/quest8"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/quest8_group"
-                    android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/quest8_ans1"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/same_area"/>
-                    <RadioButton android:id="@+id/quest8_ans2"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/different_area"/>
-                </RadioGroup>
-
-                <TextView android:text="@string/quest9"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/washing_face"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/brushing_teeth"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/wind"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/cold"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/touch"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/laughing"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/talking"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/eating"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/other"/>
-                <EditText
-                    android:layout_width="match_parent" android:layout_height="wrap_content" />
-
-                <TextView android:text="@string/quest10"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/quest10_group"
-                    android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/quest10_ans1"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/no"
-                        android:onClick="onClick_10"/>
-                    <RadioButton android:id="@+id/quest10_ans2"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/yes_as_needed"
-                        android:onClick="onClick_10"/>
-                    <RadioButton android:id="@+id/quest10_ans3"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/yes_regularly"
-                        android:onClick="onClick_10"/>
-                </RadioGroup>
-            </LinearLayout>
-
-            <LinearLayout android:id="@+id/questions_11_12"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:visibility="gone">
-                <TextView android:text="@string/quest11"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/ques11_group"
-                    android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/quest11_ans1"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/daily"/>
-                    <RadioButton android:id="@+id/quest11_ans2"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/times_week_2_3"/>
-                    <RadioButton android:id="@+id/quest11_ans3"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/times_week_1_less"/>
-                    <RadioButton android:id="@+id/quest11_ans4"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/other"/>
-                    <EditText
-                        android:layout_width="match_parent" android:layout_height="wrap_content" />
-                </RadioGroup>
-
-                <TextView android:text="@string/quest12"
-                    android:textSize="17sp" android:layout_marginTop="15dp"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
-                <!--TODO: Lista leków i ich ilości-->
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout android:id="@+id/questions_13"
+        <TextView android:text="@string/quest2a"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q2a"
             android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:visibility="gone">
-            <TextView android:text="@string/quest13a"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest13a_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest13a_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/no"/>
-                <RadioButton android:id="@+id/quest13a_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/yes_worse"/>
-                <RadioButton android:id="@+id/quest13a_ans3"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/yes_same"/>
-            </RadioGroup>
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest13b"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest13b_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest13b_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/no" android:onClick="onClick_13"/>
-                <RadioButton android:id="@+id/quest13b_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/yes" android:onClick="onClick_13"/>
-            </RadioGroup>
-        </LinearLayout>
-
-        <LinearLayout android:id="@+id/questions_14_16"
+        <TextView android:text="@string/quest2a"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q2b"
             android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:visibility="gone">
-            <TextView android:text="@string/quest14"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest14_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest14_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/immediately"/>
-                <RadioButton android:id="@+id/quest14_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/later_1_2_months"/>
-                <RadioButton android:id="@+id/quest14_ans3"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/later_3_5_months"/>
-                <RadioButton android:id="@+id/quest14_ans4"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/later_6_more_months"/>
-            </RadioGroup>
+            android:choiceMode="singleChoice"/>
+        <EditText
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
 
-            <TextView android:text="@string/quest15"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <SeekBar
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="7"/>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="0" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="1" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="2" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="3" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="4" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="5" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="6" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="7" android:textColor="@color/grey"/>
-            </LinearLayout>
-
-            <TextView android:text="@string/quest16"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <SeekBar
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="7"/>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="0" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="1" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="2" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="3" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="4" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="5" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="6" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="7" android:textColor="@color/grey"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout android:id="@+id/questions_17_31"
+        <TextView android:text="@string/quest3"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q3"
             android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-            <TextView android:text="@string/quest17"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <SeekBar
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="7"/>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="0" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="1" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="2" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="3" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="4" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="5" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="6" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="7" android:textColor="@color/grey"/>
-            </LinearLayout>
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest18"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <SeekBar
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="7"/>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="0" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="1" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="2" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="3" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="4" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="5" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="6" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="7" android:textColor="@color/grey"/>
-            </LinearLayout>
+        <TextView android:text="@string/quest4"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q4"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest19"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest19_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest19_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/lasted_1_6_gone"/>
-                <RadioButton android:id="@+id/quest19_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/lasted_6_more_gone"/>
-                <RadioButton android:id="@+id/quest19_ans3"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/still_there_improved"/>
-                <RadioButton android:id="@+id/quest19_ans4"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/still_same"/>
-                <RadioButton android:id="@+id/quest19_ans5"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/getting_worse"/>
-            </RadioGroup>
+        <TextView android:text="@string/quest5"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q5"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest20"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest20_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest20_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/no"/>
-                <RadioButton android:id="@+id/quest20_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/yes"/>
-            </RadioGroup>
+        <TextView android:text="@string/quest6"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q6"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest21"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest21_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest21_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/no"/>
-                <RadioButton android:id="@+id/quest21_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/yes"/>
-            </RadioGroup>
+        <TextView android:text="@string/quest7"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <SeekBar android:id="@+id/seek_bar_7"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="7"/>
+        <LinearLayout android:id="@+id/q7_layout_label"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
 
-            <TextView android:text="@string/quest22"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest22_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest22_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/no"/>
-                <RadioButton android:id="@+id/quest22_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/yes"/>
-            </RadioGroup>
+        <TextView android:text="@string/quest8"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q8"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest23"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest23_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest23_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/no" android:onClick="onClick_23"/>
-                <RadioButton android:id="@+id/quest23_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/yes" android:onClick="onClick_23"/>
-            </RadioGroup>
-            <LinearLayout android:id="@+id/quest23_checkBoxes"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:visibility="gone">
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/chewing_food"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/controlling_dentures"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/dribbling"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/excessive_bitting"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/muscule_spasm"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/other"/>
-                <EditText
-                    android:layout_width="match_parent" android:layout_height="wrap_content" />
-            </LinearLayout>
+        <TextView android:text="@string/quest9"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q9"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="multipleChoice"/>
+        <EditText
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
 
-            <TextView android:text="@string/quest24"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest24_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest24_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/no" android:onClick="onClick_24"/>
-                <RadioButton android:id="@+id/quest24_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/yes" android:onClick="onClick_24"/>
-            </RadioGroup>
-            <LinearLayout android:id="@+id/quest24_checkBoxes"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:visibility="gone">
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/blurred"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/bits_floating"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/eyes_not_focus"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/seeing_double"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/watering"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/eye_infection"/>
-                <CheckBox
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="@string/other"/>
-                <EditText
-                    android:layout_width="match_parent" android:layout_height="wrap_content" />
-            </LinearLayout>
+        <TextView android:text="@string/quest10"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q10"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest25"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <!--TODO: Lista zażaleń-->
+        <TextView android:text="@string/quest11"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q11"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
+        <EditText
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
 
-            <TextView android:text="@string/quest26"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <!--TODO: by to ładnie wyglądało i dobrze się użytkowało-->
+        <TextView android:text="@string/quest12"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <!--TODO: Lista leków i ich ilości-->
 
-            <TextView android:text="@string/quest27"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest27_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest27_ans1"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/right_time"/>
-                <RadioButton android:id="@+id/quest27_ans2"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/should_earlier"/>
-                <RadioButton android:id="@+id/quest27_ans3"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/should_later"/>
-                <RadioButton android:id="@+id/quest27_ans4"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/should_never"/>
-            </RadioGroup>
+        <TextView android:text="@string/quest13a"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q13a"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest28"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <SeekBar
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="7"/>
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="0" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="1" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="2" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="3" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="4" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="5" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="6" android:textColor="@color/grey"/>
-                <TextView
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textAlignment="center"
-                    android:text="7" android:textColor="@color/grey"/>
-            </LinearLayout>
+        <TextView android:text="@string/quest13b"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q13b"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest29"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest29_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest29_ans1"
-                    android:layout_width="match_parent"  android:layout_height="wrap_content"
-                    android:text="@string/no"/>
-                <RadioButton android:id="@+id/quest29_ans2"
-                    android:layout_width="match_parent"  android:layout_height="wrap_content"
-                    android:text="@string/yes"/>
-            </RadioGroup>
+        <TextView android:text="@string/quest14"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q14"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
 
-            <TextView android:text="@string/quest30"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest30_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest30_ans1"
-                    android:layout_width="match_parent"  android:layout_height="wrap_content"
-                    android:text="@string/no"/>
-                <RadioButton android:id="@+id/quest30_ans2"
-                    android:layout_width="match_parent"  android:layout_height="wrap_content"
-                    android:text="@string/yes"/>
-            </RadioGroup>
+        <TextView android:text="@string/quest15"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <SeekBar
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="7"/>
+        <LinearLayout android:id="@+id/q15_layout_label"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
 
-            <TextView android:text="@string/quest31"
-                android:textSize="17sp" android:layout_marginTop="15dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content"/>
-            <RadioGroup android:id="@+id/quest31_group"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-                <RadioButton android:id="@+id/quest31_ans1"
-                    android:layout_width="match_parent"  android:layout_height="wrap_content"
-                    android:text="@string/no" android:onClick="onClick_31"/>
-                <RadioButton android:id="@+id/quest31_ans2"
-                    android:layout_width="match_parent"  android:layout_height="wrap_content"
-                    android:text="@string/yes" android:onClick="onClick_31"/>
-            </RadioGroup>
-            <LinearLayout android:id="@+id/quest31_checkBoxes"
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical" android:visibility="gone">
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/microvascular"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/rhizotomy"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/termoregulation"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/glycerol_injection"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/baloon_compression"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/gamma_knife"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/laser"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/acupuncture"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/cryosurgery"/>
-                <CheckBox
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="@string/other"/>
-                <EditText
-                    android:layout_width="match_parent" android:layout_height="wrap_content" />
-            </LinearLayout>
-        </LinearLayout>
+        <TextView android:text="@string/quest16"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <SeekBar
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="7"/>
+        <LinearLayout android:id="@+id/q16_layout_label"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+
+        <TextView android:text="@string/quest17"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <SeekBar
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="7"/>
+        <LinearLayout android:id="@+id/q17_layout_label"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+
+        <TextView android:text="@string/quest18"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <SeekBar
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="7"/>
+        <LinearLayout android:id="@+id/q18_layout_label"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+
+        <TextView android:text="@string/quest19"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q19"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
+
+        <TextView android:text="@string/quest20"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q20"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
+
+        <TextView android:text="@string/quest21"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q21"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
+
+        <TextView android:text="@string/quest22"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q22"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
+
+        <TextView android:text="@string/quest23"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q23"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="multipleChoice"/>
+        <EditText
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:text="@string/quest24"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q24"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="multipleChoice"/>
+        <EditText
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <TextView android:text="@string/quest25"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <!--TODO: Lista zażaleń-->
+
+        <TextView android:text="@string/quest26"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <!--TODO: by to ładnie wyglądało i dobrze się użytkowało-->
+
+        <TextView android:text="@string/quest27"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q27"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
+
+        <TextView android:text="@string/quest28"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <SeekBar android:id="@+id/seek_bar_28"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:max="7"/>
+        <LinearLayout android:id="@+id/q28_layout_label"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+
+        <TextView android:text="@string/quest29"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q29"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
+
+        <TextView android:text="@string/quest30"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q30"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"/>
+
+        <TextView android:text="@string/quest31"
+            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q31"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:choiceMode="multipleChoice"/>
+        <EditText
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+
         <Button android:id="@+id/button_save"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="Save"
-            android:layout_gravity="end" android:layout_marginTop="15dp"
-            android:visibility="gone"/>
+            android:layout_gravity="end" android:layout_marginTop="15dp"/>
     </LinearLayout>
 </ScrollView>

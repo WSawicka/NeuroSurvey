@@ -5,16 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends Activity {
+public class PatientPersonalDetailsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_patient_personal_details);
     }
 
-    public void newTest(View view){
-        Intent intent = new Intent(this, PatientPersonalDetailsActivity.class);
+    public void goNext(View view){
+        Intent intent = new Intent(this, NewTestActivity.class);
         startActivity(intent);
+
     }
 }

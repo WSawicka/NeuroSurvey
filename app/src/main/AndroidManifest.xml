@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewTest"></activity>
+        <activity android:name=".NewTestActivity" />
+        <activity android:name=".PatientPersonalDetailsActivity"></activity>
     </application>
 
 </manifest>
