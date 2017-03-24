@@ -15,7 +15,6 @@
         <item>Still \'shooting\' but less severe</item>
         <item>Still \'shooting\' but more severe</item>
         <item>It is dull / achy now</item>
-        <item>@string/other</item>
     </string-array>
     
     <string-array name="q3">
@@ -63,7 +62,6 @@
         <item>Laughing</item>
         <item>Talking</item>
         <item>Eating</item>
-        <item>@string/other</item>
     </string-array>
     
     <string-array name="q10">
@@ -76,7 +74,6 @@
         <item>Daily</item>
         <item>2-3 times a week</item>
         <item>Less than 1/week</item>
-        <item>@string/other</item>
     </string-array>
     
     <string-array name="q12">
@@ -132,7 +129,6 @@
         <item>With dribbling</item>
         <item>With excessive bitting of cheek</item>
         <item>With muscules going into spasm</item>
-        <item>@string/other</item>
     </string-array>
 
     <string-array name="q24">
@@ -143,7 +139,6 @@
         <item>Seeing double</item>
         <item>Watering a lot</item>
         <item>Eye infection</item>
-        <item>@string/other</item>
     </string-array>
 
     <string-array name="q25">
@@ -184,7 +179,6 @@
         <item>Laser</item>
         <item>Acupuncture</item>
         <item>Cryosurgery</item>
-        <item>@string/other</item>
     </string-array>
 
     <string-array name="gender_array">

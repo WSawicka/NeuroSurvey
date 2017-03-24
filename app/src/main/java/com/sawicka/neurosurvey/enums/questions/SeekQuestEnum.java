@@ -26,7 +26,7 @@ public enum SeekQuestEnum {
     Q26_8(R.id.q26_8_layout_label, R.layout.label_view_4val, R.id.seek_bar_26_8),
     Q26_9(R.id.q26_9_layout_label, R.layout.label_view_4val, R.id.seek_bar_26_9);
 
-    public Integer questionId;
+    Integer questionId;
     Integer optionsArrayId;
     Integer seekBarId;
 

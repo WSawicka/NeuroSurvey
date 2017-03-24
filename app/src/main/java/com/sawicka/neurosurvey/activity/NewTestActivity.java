@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SeekBar;
@@ -15,14 +16,25 @@ import com.sawicka.neurosurvey.enums.questions.CheckQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.RadioQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.SeekQuestEnum;
 import com.sawicka.neurosurvey.presenter.SurveyPresenter;
+import com.sawicka.neurosurvey.utils.NoScrollListView;
 
 import java.util.Arrays;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class NewTestActivity extends Activity {
     private SurveyPresenter presenter = new SurveyPresenter(this);
+
+    @BindViews({R.id.other_2b, R.id.other_9, R.id.other_11, R.id.other_23, R.id.other_24, R.id.other_31})
+    List<EditText> others;
+    @BindView(R.id.added_listView_12) NoScrollListView added_lv_12;
+    @BindView(R.id.added_listView_25) NoScrollListView added_lv_25;
+    @BindView(R.id.edit_text_12) EditText edit_text_12;
+    @BindView(R.id.edit_text_25) EditText edit_text_25;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +86,22 @@ public class NewTestActivity extends Activity {
         }
     }
 
+    @OnClick(R.id.button_add_12)
+    public void addToListView12(){
+        presenter.addNewToListView(added_lv_12.getId(), edit_text_12.getText().toString());
+        added_lv_12.setAdapter(new ArrayAdapter<>(
+                this, R.layout.label_view_added_text, presenter.getList(added_lv_12.getId())));
+        edit_text_12.setText("");
+    }
+
+    @OnClick(R.id.button_add_25)
+    public void addToListView25(){
+        presenter.addNewToListView(added_lv_25.getId(), edit_text_25.getText().toString());
+        added_lv_25.setAdapter(new ArrayAdapter<>(
+                this, R.layout.label_view_added_text, presenter.getList(added_lv_25.getId())));
+        edit_text_25.setText("");
+    }
+
     public SeekBar.OnSeekBarChangeListener getSeekBarListener(){
         return new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -105,5 +133,10 @@ public class NewTestActivity extends Activity {
                 presenter.addNewCheckQuestion(parent.getId(), position);
             }
         };
+    }
+
+    @OnClick(R.id.button_save)
+    public void handleSave(){
+        presenter.setOtherAnswersText(others);
     }
 }
