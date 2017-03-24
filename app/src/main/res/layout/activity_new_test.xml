@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.sawicka.neurosurvey.NewTestActivity"
+    tools:context="com.sawicka.neurosurvey.activity.NewTestActivity"
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:layout_alignParentTop="true"
@@ -27,14 +27,14 @@
             android:choiceMode="singleChoice" />
 
         <TextView android:text="@string/quest2a"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q2a"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
-        <TextView android:text="@string/quest2a"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+        <TextView android:text="@string/quest2b"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="wrap_content" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q2b"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -43,35 +43,35 @@
             android:layout_width="match_parent" android:layout_height="wrap_content" />
 
         <TextView android:text="@string/quest3"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q3"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest4"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q4"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest5"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q5"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest6"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q6"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest7"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <SeekBar android:id="@+id/seek_bar_7"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -81,14 +81,14 @@
             android:orientation="horizontal"/>
 
         <TextView android:text="@string/quest8"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q8"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest9"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q9"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -97,14 +97,14 @@
             android:layout_width="match_parent" android:layout_height="wrap_content" />
 
         <TextView android:text="@string/quest10"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q10"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest11"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q11"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -113,35 +113,39 @@
             android:layout_width="match_parent" android:layout_height="wrap_content" />
 
         <TextView android:text="@string/quest12"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <!--TODO: Lista leków i ich ilości-->
+        <EditText
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Add"/>
 
         <TextView android:text="@string/quest13a"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q13a"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest13b"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q13b"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest14"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q14"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest15"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <SeekBar
+        <SeekBar android:id="@+id/seek_bar_15"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:max="7"/>
         <LinearLayout android:id="@+id/q15_layout_label"
@@ -149,9 +153,9 @@
             android:orientation="horizontal"/>
 
         <TextView android:text="@string/quest16"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <SeekBar
+        <SeekBar android:id="@+id/seek_bar_16"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:max="7"/>
         <LinearLayout android:id="@+id/q16_layout_label"
@@ -159,9 +163,9 @@
             android:orientation="horizontal"/>
 
         <TextView android:text="@string/quest17"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <SeekBar
+        <SeekBar android:id="@+id/seek_bar_17"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:max="7"/>
         <LinearLayout android:id="@+id/q17_layout_label"
@@ -169,9 +173,9 @@
             android:orientation="horizontal"/>
 
         <TextView android:text="@string/quest18"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <SeekBar
+        <SeekBar android:id="@+id/seek_bar_18"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:max="7"/>
         <LinearLayout android:id="@+id/q18_layout_label"
@@ -179,35 +183,35 @@
             android:orientation="horizontal"/>
 
         <TextView android:text="@string/quest19"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q19"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest20"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q20"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest21"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q21"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest22"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q22"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest23"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q23"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -216,7 +220,7 @@
             android:layout_width="match_parent" android:layout_height="wrap_content" />
 
         <TextView android:text="@string/quest24"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q24"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -225,24 +229,118 @@
             android:layout_width="match_parent" android:layout_height="wrap_content" />
 
         <TextView android:text="@string/quest25"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <!--TODO: Lista zażaleń-->
+        <EditText
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Add"/>
 
         <TextView android:text="@string/quest26"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <!--TODO: by to ładnie wyglądało i dobrze się użytkowało-->
+
+            <TextView android:text="@string/numbness"
+                android:textSize="15sp" android:layout_marginTop="15dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_1"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_1_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView android:text="@string/burning"
+                android:textSize="15sp" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_2"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_2_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView android:text="@string/hearing"
+                android:textSize="15sp" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_3"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_3_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView android:text="@string/unsteadiness"
+                android:textSize="15sp" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_4"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_4_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView android:text="@string/dizziness"
+                android:textSize="15sp" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_5"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_5_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView android:text="@string/headaches"
+                android:textSize="15sp" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_6"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_6_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView android:text="@string/trouble_eating"
+                android:textSize="15sp" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_7"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_7_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView android:text="@string/trouble_vision"
+                android:textSize="15sp" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_8"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_8_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
+            <TextView android:text="@string/other"
+                android:textSize="15sp" android:layout_marginTop="25dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <SeekBar android:id="@+id/seek_bar_26_9"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="3"/>
+            <LinearLayout android:id="@+id/q26_9_layout_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+
 
         <TextView android:text="@string/quest27"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q27"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest28"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <SeekBar android:id="@+id/seek_bar_28"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -252,21 +350,21 @@
             android:orientation="horizontal"/>
 
         <TextView android:text="@string/quest29"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q29"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest30"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q30"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
 
         <TextView android:text="@string/quest31"
-            android:textSize="17sp" android:layout_marginTop="15dp"
+            android:textSize="17sp" android:layout_marginTop="25dp"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q31"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -277,6 +375,6 @@
         <Button android:id="@+id/button_save"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="Save"
-            android:layout_gravity="end" android:layout_marginTop="15dp"/>
+            android:layout_gravity="end" android:layout_marginTop="25dp"/>
     </LinearLayout>
 </ScrollView>

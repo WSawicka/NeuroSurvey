@@ -1,5 +1,7 @@
 package com.sawicka.neurosurvey.model;
 
+import com.sawicka.neurosurvey.enums.GenderEnum;
+
 import org.joda.time.LocalDate;
 
 import lombok.Getter;

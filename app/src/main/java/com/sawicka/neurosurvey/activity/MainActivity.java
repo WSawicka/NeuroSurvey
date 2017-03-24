@@ -1,9 +1,11 @@
-package com.sawicka.neurosurvey;
+package com.sawicka.neurosurvey.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.sawicka.neurosurvey.R;
 
 public class MainActivity extends Activity {
 

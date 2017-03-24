@@ -4,30 +4,30 @@
         <item>@string/no</item>
         <item>@string/yes</item>
     </string-array>
-    
+
     <string-array name="q2a">
         <item>@string/no</item>
         <item>@string/yes</item>
-        <item>@string/notSure</item>
+        <item>Not sure</item>
     </string-array>
-    
+
     <string-array name="q2b">
-        <item>@string/shooting_less</item>
-        <item>@string/shooting_more</item>
-        <item>@string/dull_achy</item>
+        <item>Still \'shooting\' but less severe</item>
+        <item>Still \'shooting\' but more severe</item>
+        <item>It is dull / achy now</item>
         <item>@string/other</item>
     </string-array>
     
     <string-array name="q3">
-        <item>@string/immediately</item>
-        <item>@string/after_1_6</item>
-        <item>@string/after_7_12</item>
-        <item>@string/later_1_2_years</item>
-        <item>@string/later_3_4_years</item>
-        <item>@string/later_5_6_years</item>
-        <item>@string/later_6_7_years</item>
-        <item>@string/later_8_9_years</item>
-        <item>@string/later_10_years</item>
+        <item>Immediately</item>
+        <item>1-6 months after</item>
+        <item>7-12 months after</item>
+        <item>1-2 years later</item>
+        <item>3-4 years later</item>
+        <item>5-6 years later</item>
+        <item>6-7 years later</item>
+        <item>8-9 years later</item>
+        <item>Over 10 years later</item>
     </string-array>
     
     <string-array name="q4">
@@ -36,46 +36,46 @@
     </string-array>
     
     <string-array name="q5">
-        <item>@string/seconds</item>
-        <item>@string/minutes</item>
-        <item>@string/hours</item>
-        <item>@string/days</item>
+        <item>Seconds</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
     </string-array>
     
     <string-array name="q6">
-        <item>@string/minutes</item>
-        <item>@string/hours</item>
-        <item>@string/days</item>
-        <item>@string/weeks</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Weeks</item>
     </string-array>
     
     <string-array name="q8">
-        <item>@string/same_area</item>
-        <item>@string/different_area</item>
+        <item>Same area as before operation</item>
+        <item>Different area than before operation</item>
     </string-array>
     
     <string-array name="q9">
-        <item>@string/washing_face</item>
-        <item>@string/brushing_teeth</item>
-        <item>@string/wind</item>
-        <item>@string/cold</item>
-        <item>@string/touch</item>
-        <item>@string/laughing</item>
-        <item>@string/talking</item>
-        <item>@string/eating</item>
+        <item>Washing face</item>
+        <item>Brushing teeth</item>
+        <item>Wind</item>
+        <item>Cold</item>
+        <item>Touch</item>
+        <item>Laughing</item>
+        <item>Talking</item>
+        <item>Eating</item>
         <item>@string/other</item>
     </string-array>
     
     <string-array name="q10">
         <item>@string/no</item>
-        <item>@string/yes_as_needed</item>
-        <item>@string/yes_regularly</item>
+        <item>Yes, as needed</item>
+        <item>Yes, regularly</item>
     </string-array>
     
     <string-array name="q11">
-        <item>@string/daily</item>
-        <item>@string/times_week_2_3</item>
-        <item>@string/times_week_1_less</item>
+        <item>Daily</item>
+        <item>2-3 times a week</item>
+        <item>Less than 1/week</item>
         <item>@string/other</item>
     </string-array>
     
@@ -86,8 +86,8 @@
     
     <string-array name="q13a">
         <item>@string/no</item>
-        <item>@string/yes_worse</item>
-        <item>@string/yes_same</item>
+        <item>Yes, worse than before</item>
+        <item>Yes, same than before</item>
     </string-array>
     
     <string-array name="q13b">
@@ -96,18 +96,18 @@
     </string-array>
     
     <string-array name="q14">
-        <item>@string/immediately</item>
-        <item>@string/later_1_2_months</item>
-        <item>@string/later_3_5_months</item>
-        <item>@string/later_6_more_months</item>
+        <item>Immediately</item>
+        <item>1-2 months later</item>
+        <item>3-5 months later</item>
+        <item>6 or more months later</item>
     </string-array>
 
     <string-array name="q19">
-        <item>@string/lasted_1_6_gone</item>
-        <item>@string/later_6_more_months</item>
-        <item>@string/still_there_improved</item>
-        <item>@string/still_same</item>
-        <item>@string/getting_worse</item>
+        <item>Lasted 1-6 months but now it\'s gone</item>
+        <item>Lasted 6+ months but now it\'s gone</item>
+        <item>It\'s still there, but has improved</item>
+        <item>It\'s still the same</item>
+        <item>It\'s getting worse</item>
     </string-array>
 
     <string-array name="q20">
@@ -127,38 +127,26 @@
 
     <string-array name="q23">
         <item>@string/no</item>
-        <item>@string/chewing_food</item>
-        <item>@string/controlling_dentures</item>
-        <item>@string/dribbling</item>
-        <item>@string/excessive_bitting</item>
-        <item>@string/muscule_spasm</item>
+        <item>With chewing food</item>
+        <item>With controlling dentures</item>
+        <item>With dribbling</item>
+        <item>With excessive bitting of cheek</item>
+        <item>With muscules going into spasm</item>
         <item>@string/other</item>
     </string-array>
 
     <string-array name="q24">
         <item>@string/no</item>
-        <item>@string/blurred</item>
-        <item>@string/bits_floating</item>
-        <item>@string/eyes_not_focus</item>
-        <item>@string/seeing_double</item>
-        <item>@string/watering</item>
-        <item>@string/eye_infection</item>
+        <item>Blurred</item>
+        <item>Bits floating</item>
+        <item>Eyes do not focus well</item>
+        <item>Seeing double</item>
+        <item>Watering a lot</item>
+        <item>Eye infection</item>
         <item>@string/other</item>
     </string-array>
 
     <string-array name="q25">
-    </string-array>
-
-    <string-array name="q26">
-        <item>Numbness</item>
-        <item>Burning sensation</item>
-        <item>Hearing loss</item>
-        <item>Unsteadiness</item>
-        <item>Dizziness</item>
-        <item>Headaches</item>
-        <item>Trouble with eating</item>
-        <item>Trouble with vision/eyes</item>
-        <item>@string/other</item>
     </string-array>
 
     <string-array name="q26_opt">
@@ -169,10 +157,10 @@
     </string-array>
 
     <string-array name="q27">
-        <item>@string/right_time</item>
-        <item>@string/should_earlier</item>
-        <item>@string/should_later</item>
-        <item>@string/should_never</item>
+        <item>Done at the right time</item>
+        <item>Should have done earlier</item>
+        <item>Should have done later</item>
+        <item>Should have never been done</item>
     </string-array>
 
     <string-array name="q29">
@@ -187,21 +175,43 @@
 
     <string-array name="q31">
         <item>@string/no</item>
-        <item>@string/microvascular</item>
-        <item>@string/rhizotomy</item>
-        <item>@string/termoregulation</item>
-        <item>@string/glycerol_injection</item>
-        <item>@string/baloon_compression</item>
-        <item>@string/gamma_knife</item>
-        <item>@string/laser</item>
-        <item>@string/acupuncture</item>
-        <item>@string/cryosurgery</item>
+        <item>Microvascular decompression</item>
+        <item>Posterior sensory rhizotomy</item>
+        <item>Radiofrequency thermocoagulation</item>
+        <item>Glycerol injection</item>
+        <item>Balloon compression</item>
+        <item>Gamma knife</item>
+        <item>Laser</item>
+        <item>Acupuncture</item>
+        <item>Cryosurgery</item>
         <item>@string/other</item>
+    </string-array>
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
     </string-array>
 
 
     <string name="no">No</string>
-    <string name="notSure">Not sure</string>
+    <string name="yes">Yes</string>
+    <string name="other">"Other: "</string>
+    <string name="name">Name and surname</string>
+    <string name="operation_date">Date of last operation</string>
+    <string name="gender">Gender</string>
+    <string name="age">Age</string>
+    <string name="next">Next</string>
+    <string name="operation_name">Name of the last operation</string>
+
+    <string name="numbness">Numbness</string>
+    <string name="burning">Burning sensation</string>
+    <string name="hearing">Hearing loss</string>
+    <string name="unsteadiness">Unsteadiness</string>
+    <string name="dizziness">Dizziness</string>
+    <string name="headaches">Headaches</string>
+    <string name="trouble_eating">Trouble with eating</string>
+    <string name="trouble_vision">Trouble with vision/eyes</string>
+
     <string name="quest1">1. Have you had any type of facial pain since your last operation?</string>
     <string name="quest10">10. Have you taken any medication for the facial pain since the last operation?</string>
     <string name="quest11">11. Roughly how often in the past month have you been taking medication?</string>
@@ -235,78 +245,6 @@
     <string name="quest7">7. How intense does the pain feel?</string>
     <string name="quest8">8. Where is the pain?</string>
     <string name="quest9">9. Do any of these activities set the pain off?</string>
-    <string name="yes">Yes</string>
-    <string name="acupuncture">Acupuncture</string>
-    <string name="after_1_6">1-6 months after</string>
-    <string name="after_7_12">7-12 months after</string>
-    <string name="baloon_compression">Balloon compression</string>
-    <string name="bits_floating">Bits floating</string>
-    <string name="blurred">Blurred</string>
-    <string name="brushing_teeth">Brushing teeth</string>
-    <string name="chewing_food">With chewing food</string>
-    <string name="cold">Cold</string>
-    <string name="controlling_dentures">With controlling dentures</string>
-    <string name="cryosurgery">Cryosurgery</string>
-    <string name="daily">Daily</string>
-    <string name="days">Days</string>
-    <string name="different_area">Different area than before operation</string>
-    <string name="dribbling">With dribbling</string>
-    <string name="dull_achy">It is dull / achy now</string>
-    <string name="eating">Eating</string>
-    <string name="excessive_bitting">With excessive bitting of cheek</string>
-    <string name="eye_infection">Eye infection</string>
-    <string name="eyes_not_focus">Eyes do not focus well</string>
-    <string name="gamma_knife">Gamma knife</string>
-    <string name="getting_worse">It\'s getting worse</string>
-    <string name="glycerol_injection">Glycerol injection</string>
-    <string name="hours">Hours</string>
-    <string name="immediately">Immediately</string>
-    <string name="laser">Laser</string>
-    <string name="lasted_1_6_gone">Lasted 1-6 months but now it\'s gone</string>
-    <string name="lasted_6_more_gone">Lasted 6+ months but now it\'s gone</string>
-    <string name="later_10_years">Over 10 years later</string>
-    <string name="later_1_2_months">1-2 months later</string>
-    <string name="later_1_2_years">1-2 years later</string>
-    <string name="later_3_4_years">3-4 years later</string>
-    <string name="later_3_5_months">3-5 months later</string>
-    <string name="later_5_6_years">5-6 years later</string>
-    <string name="later_6_7_years">6-7 years later</string>
-    <string name="later_6_more_months">6 or more months later</string>
-    <string name="later_8_9_years">8-9 years later</string>
-    <string name="laughing">Laughing</string>
-    <string name="microvascular">Microvascular decompression</string>
-    <string name="minutes">Minutes</string>
-    <string name="muscule_spasm">With muscules going into spasm</string>
-    <string name="other">"Other: "</string>
-    <string name="rhizotomy">Posterior sensory rhizotomy</string>
-    <string name="right_time">Done at the right time</string>
-    <string name="same_area">Same area as before operation</string>
-    <string name="seconds">Seconds</string>
-    <string name="seeing_double">Seeing double</string>
-    <string name="shooting_less">Still \'shooting\' but less severe</string>
-    <string name="shooting_more">Still \'shooting\' but more severe</string>
-    <string name="should_earlier">Should have done earlier</string>
-    <string name="should_later">Should have done later</string>
-    <string name="should_never">Should have never been done</string>
-    <string name="still_same">It\'s still the same</string>
-    <string name="still_there_improved">It\'s still there, but has improved</string>
-    <string name="talking">Talking</string>
-    <string name="termoregulation">Radiofrequency thermocoagulation</string>
-    <string name="times_week_1_less">Less than 1/week</string>
-    <string name="times_week_2_3">2-3 times a week</string>
-    <string name="touch">Touch</string>
-    <string name="washing_face">Washing face</string>
-    <string name="watering">Watering a lot</string>
-    <string name="weeks">Weeks</string>
-    <string name="wind">Wind</string>
-    <string name="yes_as_needed">Yes, as needed</string>
-    <string name="yes_regularly">Yes, regularly</string>
-    <string name="yes_same">Yes, same than before</string>
-    <string name="yes_worse">Yes, worse than before</string>
-    <string name="name">Name and surname</string>
-    <string name="operation_date">Date of operation</string>
-    <string name="gender">Gender</string>
-    <string name="age">Age</string>
-    <string name="next">Next</string>
-    <string name="operation_name">Last operation name</string>
+
+
 </resources>
