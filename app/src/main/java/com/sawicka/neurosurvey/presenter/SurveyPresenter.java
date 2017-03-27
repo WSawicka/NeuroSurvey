@@ -91,6 +91,10 @@ public class SurveyPresenter {
         }
     }
 
+    public void setComments(String comments){
+        this.survey.setComments(comments);
+    }
+
     public void addNewToListView(Integer listViewId, String text){
         String keyName = getOtherQuestName(listViewId);
         if(text.equals("")){

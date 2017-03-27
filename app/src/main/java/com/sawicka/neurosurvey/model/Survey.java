@@ -9,7 +9,8 @@ import java.util.Map;
  */
 
 public class Survey {
-    Map<String, List> questions;
+    private Map<String, List> questions;
+    private String comments;
 
     public Survey(){
         this.questions = new HashMap<>();
@@ -25,6 +26,14 @@ public class Survey {
 
     public List getQuestionList(String key){
         return this.questions.get(key);
+    }
+
+    public void setComments(String comments){
+        this.comments = comments;
+    }
+
+    public String getComments(){
+        return this.comments;
     }
 
     /*private int question1 - 8

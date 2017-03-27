@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.sawicka.neurosurvey.R;
 import com.sawicka.neurosurvey.enums.GenderEnum;
 import com.sawicka.neurosurvey.presenter.PatientPresenter;
@@ -33,8 +32,6 @@ public class PatientPersonalDetailsActivity extends Activity {
     @BindView(R.id.operation_date_picker) DatePicker operationDate;
     @BindView(R.id.operation_name_value) EditText operationName;
     @BindView(R.id.button_next_open_test) Button buttonNext;
-
-    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -382,6 +382,10 @@
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:hint="@string/other" android:inputType="textMultiLine"/>
 
+        <EditText android:id="@+id/comments"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:inputType="textLongMessage"/>
+
         <Button android:id="@+id/button_save"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="Save"

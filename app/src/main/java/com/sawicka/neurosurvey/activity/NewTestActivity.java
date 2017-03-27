@@ -35,6 +35,7 @@ public class NewTestActivity extends Activity {
     @BindView(R.id.added_listView_25) NoScrollListView added_lv_25;
     @BindView(R.id.edit_text_12) EditText edit_text_12;
     @BindView(R.id.edit_text_25) EditText edit_text_25;
+    @BindView(R.id.comments) EditText comments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,5 +139,6 @@ public class NewTestActivity extends Activity {
     @OnClick(R.id.button_save)
     public void handleSave(){
         presenter.setOtherAnswersText(others);
+        presenter.setComments(comments.getText().toString());
     }
 }
