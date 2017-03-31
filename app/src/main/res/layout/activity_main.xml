@@ -39,5 +39,9 @@
         <Button android:id="@+id/export_button"
             android:text="Export"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        <Button android:id="@+id/settings_button"
+            android:text="Settings"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
     </LinearLayout>
 </RelativeLayout>

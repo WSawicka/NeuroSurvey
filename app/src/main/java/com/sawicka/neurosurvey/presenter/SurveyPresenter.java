@@ -1,6 +1,8 @@
 package com.sawicka.neurosurvey.presenter;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.widget.EditText;
 
@@ -19,31 +21,24 @@ import java.util.List;
  * Created by mloda on 20.03.17.
  */
 
-public class SurveyPresenter {
-    private Survey survey;
-    private Context context;
-    private MyAlert alert;
+public class SurveyPresenter implements Parcelable {
+    private Survey survey = new Survey();
 
-    public SurveyPresenter(Context context){
-        this.survey = new Survey();
-        this.context = context;
-    }
-
-    public void addNewRadioQuestion(Integer keyId, int position){
+    public void addNewRadioQuestion(Integer keyId, int position, Context context){
         String keyName = getRadioEnumName(keyId);
         if (keyName != null) {
             List list = new ArrayList();
             list.add(position + 1);
             this.survey.addNew(keyName, list);
         } else {
-            alert.showAlertDialog("Did not found that radio item", context);
+            new MyAlert().showAlertDialog("Did not found that radio item", context);
         }
     }
 
-    public void addNewCheckQuestion(Integer keyId, Integer position){
+    public void addNewCheckQuestion(Integer keyId, Integer position, Context context){
         String keyName = getCheckEnumName(keyId);
         if (keyName == null){
-            alert.showAlertDialog("Did not found that check box", context);
+            new MyAlert().showAlertDialog("Did not found that check box", context);
         } else {
             List list = this.survey.getQuestionList(keyName);
             if (list == null) {
@@ -60,10 +55,10 @@ public class SurveyPresenter {
         }
     }
 
-    public void addNewSeekBarValue(Integer seekBarId, Integer progress){
+    public void addNewSeekBarValue(Integer seekBarId, Integer progress, Context context){
         String keyName = getSeekEnumName(seekBarId);
         if (keyName == null){
-            alert.showAlertDialog("Did not found this seek bar", context);
+            new MyAlert().showAlertDialog("Did not found this seek bar", context);
         } else {
             List list = new ArrayList();
             list.add(progress);
@@ -71,13 +66,15 @@ public class SurveyPresenter {
         }
     }
 
-    public void setOtherAnswersText(List<EditText> others){
+    public void setOtherAnswersText(List<EditText> others, Context context){
         for(EditText other : others){
             if(other.getText() != null) {
                 String keyName = getOtherAnswerName(other.getId());
                 String text = other.getText().toString();
-                if(text.equals("") || keyName == null) {
-                    alert.showAlertDialog("Could not set other answer with id: " + other.getId(), context);
+                if(text.equals(""))
+                    return;
+                if(keyName == null) {
+                    new MyAlert().showAlertDialog("Could not set other answer with id: " + other.getId(), context);
                     return;
                 }
 
@@ -95,7 +92,7 @@ public class SurveyPresenter {
         this.survey.setComments(comments);
     }
 
-    public void addNewToListView(Integer listViewId, String text){
+    public void addNewToListView(Integer listViewId, String text, Context context){
         String keyName = getOtherQuestName(listViewId);
         if(text.equals("")){
             return;
@@ -108,18 +105,18 @@ public class SurveyPresenter {
             list.add(text);
             this.survey.addNew(keyName, list);
         } else {
-            alert.showAlertDialog("List not found", context);
+            new MyAlert().showAlertDialog("List not found", context);
         }
     }
 
-    public List<String> getList(Integer id){
+    public List<String> getList(Integer id, Context context){
         String keyName = getOtherQuestName(id);
         if(keyName != null) {
             List<String> list = this.survey.getQuestionList(keyName);
             return (list == null) ?
                     new ArrayList<String>() : list;
         } else {
-            alert.showAlertDialog("List not found", context);
+            new MyAlert().showAlertDialog("List not found", context);
             return new ArrayList<>();
         }
     }
@@ -175,5 +172,34 @@ public class SurveyPresenter {
         }
         return null;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(this.survey, flags);
+    }
+
+    public SurveyPresenter() {
+    }
+
+    protected SurveyPresenter(Parcel in) {
+        this.survey = in.readParcelable(Survey.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<SurveyPresenter> CREATOR = new Parcelable.Creator<SurveyPresenter>() {
+        @Override
+        public SurveyPresenter createFromParcel(Parcel source) {
+            return new SurveyPresenter(source);
+        }
+
+        @Override
+        public SurveyPresenter[] newArray(int size) {
+            return new SurveyPresenter[size];
+        }
+    };
 }
 

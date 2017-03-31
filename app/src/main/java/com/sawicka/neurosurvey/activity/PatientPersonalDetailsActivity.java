@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.sawicka.neurosurvey.AppTempData;
 import com.sawicka.neurosurvey.R;
 import com.sawicka.neurosurvey.enums.GenderEnum;
 import com.sawicka.neurosurvey.presenter.PatientPresenter;
@@ -25,7 +26,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class PatientPersonalDetailsActivity extends Activity {
-    private PatientPresenter presenter = new PatientPresenter();
+    private AppTempData appTempData;
+    private PatientPresenter presenter;
 
     @BindView(R.id.name_value) EditText nameValue;
     @BindView(R.id.age_value) EditText ageValue;
@@ -38,6 +40,9 @@ public class PatientPersonalDetailsActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_personal_details);
         ButterKnife.bind(this);
+
+        this.appTempData = getIntent().getParcelableExtra("APP_DATA");
+        this.presenter = this.appTempData.getPatientPresenter();
 
         operationDate.setMaxDate(new LocalDate().toDate().getTime());
 
@@ -73,6 +78,7 @@ public class PatientPersonalDetailsActivity extends Activity {
         }
 
         Intent intent = new Intent(this, NewTestActivity.class);
+        intent.putExtra("APP_DATA", this.appTempData);
         startActivity(intent);
     }
 }

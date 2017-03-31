@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SeekBar;
 
+import com.sawicka.neurosurvey.AppTempData;
 import com.sawicka.neurosurvey.R;
 import com.sawicka.neurosurvey.enums.questions.CheckQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.RadioQuestEnum;
@@ -27,7 +28,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class NewTestActivity extends Activity {
-    private SurveyPresenter presenter = new SurveyPresenter(this);
+    private AppTempData appTempData;
+    private SurveyPresenter presenter;
 
     @BindViews({R.id.other_2b, R.id.other_9, R.id.other_11, R.id.other_23, R.id.other_24, R.id.other_31})
     List<EditText> others;
@@ -42,6 +44,9 @@ public class NewTestActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_test);
         ButterKnife.bind(this);
+
+        this.appTempData = getIntent().getParcelableExtra("APP_DATA");
+        this.presenter = this.appTempData.getSurveyPresenter();
 
         setRadioListViews();
         setCheckListViews();
@@ -89,17 +94,17 @@ public class NewTestActivity extends Activity {
 
     @OnClick(R.id.button_add_12)
     public void addToListView12(){
-        presenter.addNewToListView(added_lv_12.getId(), edit_text_12.getText().toString());
+        presenter.addNewToListView(added_lv_12.getId(), edit_text_12.getText().toString(), getApplicationContext());
         added_lv_12.setAdapter(new ArrayAdapter<>(
-                this, R.layout.label_view_added_text, presenter.getList(added_lv_12.getId())));
+                this, R.layout.label_view_added_text, presenter.getList(added_lv_12.getId(), getApplicationContext())));
         edit_text_12.setText("");
     }
 
     @OnClick(R.id.button_add_25)
     public void addToListView25(){
-        presenter.addNewToListView(added_lv_25.getId(), edit_text_25.getText().toString());
+        presenter.addNewToListView(added_lv_25.getId(), edit_text_25.getText().toString(), getApplicationContext());
         added_lv_25.setAdapter(new ArrayAdapter<>(
-                this, R.layout.label_view_added_text, presenter.getList(added_lv_25.getId())));
+                this, R.layout.label_view_added_text, presenter.getList(added_lv_25.getId(), getApplicationContext())));
         edit_text_25.setText("");
     }
 
@@ -107,7 +112,7 @@ public class NewTestActivity extends Activity {
         return new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
-                presenter.addNewSeekBarValue(seekBar.getId(), progressValue);
+                presenter.addNewSeekBarValue(seekBar.getId(), progressValue, getApplicationContext());
             }
 
             @Override
@@ -122,7 +127,7 @@ public class NewTestActivity extends Activity {
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                presenter.addNewRadioQuestion(parent.getId(), position);
+                presenter.addNewRadioQuestion(parent.getId(), position, getApplicationContext());
             }
         };
     }
@@ -131,14 +136,15 @@ public class NewTestActivity extends Activity {
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                presenter.addNewCheckQuestion(parent.getId(), position);
+                presenter.addNewCheckQuestion(parent.getId(), position, getApplicationContext());
             }
         };
     }
 
     @OnClick(R.id.button_save)
     public void handleSave(){
-        presenter.setOtherAnswersText(others);
-        presenter.setComments(comments.getText().toString());
+        presenter.setOtherAnswersText(others, getApplicationContext());
+        if(comments.getText() != null)
+            presenter.setComments(comments.getText().toString());
     }
 }

@@ -16,7 +16,7 @@
         <item>Still \'shooting\' but more severe</item>
         <item>It is dull / achy now</item>
     </string-array>
-    
+
     <string-array name="q3">
         <item>Immediately</item>
         <item>1-6 months after</item>
@@ -28,31 +28,31 @@
         <item>8-9 years later</item>
         <item>Over 10 years later</item>
     </string-array>
-    
+
     <string-array name="q4">
         <item>@string/no</item>
         <item>@string/yes</item>
     </string-array>
-    
+
     <string-array name="q5">
         <item>Seconds</item>
         <item>Minutes</item>
         <item>Hours</item>
         <item>Days</item>
     </string-array>
-    
+
     <string-array name="q6">
         <item>Minutes</item>
         <item>Hours</item>
         <item>Days</item>
         <item>Weeks</item>
     </string-array>
-    
+
     <string-array name="q8">
         <item>Same area as before operation</item>
         <item>Different area than before operation</item>
     </string-array>
-    
+
     <string-array name="q9">
         <item>Washing face</item>
         <item>Brushing teeth</item>
@@ -63,35 +63,35 @@
         <item>Talking</item>
         <item>Eating</item>
     </string-array>
-    
+
     <string-array name="q10">
         <item>@string/no</item>
         <item>Yes, as needed</item>
         <item>Yes, regularly</item>
     </string-array>
-    
+
     <string-array name="q11">
         <item>Daily</item>
         <item>2-3 times a week</item>
         <item>Less than 1/week</item>
     </string-array>
-    
+
     <string-array name="q12">
         <item>Drugs</item>
         <item>Dose per day</item>
     </string-array>
-    
+
     <string-array name="q13a">
         <item>@string/no</item>
         <item>Yes, worse than before</item>
         <item>Yes, same than before</item>
     </string-array>
-    
+
     <string-array name="q13b">
         <item>@string/no</item>
         <item>@string/yes</item>
     </string-array>
-    
+
     <string-array name="q14">
         <item>Immediately</item>
         <item>1-2 months later</item>
@@ -141,8 +141,7 @@
         <item>Eye infection</item>
     </string-array>
 
-    <string-array name="q25">
-    </string-array>
+    <string-array name="q25"></string-array>
 
     <string-array name="q26_opt">
         <item>Not at all</item>
@@ -239,6 +238,79 @@
     <string name="quest7">7. How intense does the pain feel?</string>
     <string name="quest8">8. Where is the pain?</string>
     <string name="quest9">9. Do any of these activities set the pain off?</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
 
 
 </resources>
