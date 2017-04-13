@@ -3,6 +3,7 @@ package com.sawicka.neurosurvey.activity;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,13 +17,14 @@ import com.google.android.gms.drive.Drive;
 import com.google.android.gms.drive.DriveApi;
 import com.google.android.gms.drive.DriveFile;
 import com.google.android.gms.drive.DriveId;
+import com.google.android.gms.drive.DriveResource;
+import com.google.android.gms.drive.Metadata;
 import com.google.android.gms.drive.OpenFileActivityBuilder;
 import com.google.android.gms.drive.query.Filters;
 import com.google.android.gms.drive.query.SearchableField;
 import com.sawicka.neurosurvey.AppTempData;
 import com.sawicka.neurosurvey.R;
 import com.sawicka.neurosurvey.SettingsActivity;
-import com.sawicka.neurosurvey.file.ExcelWrite;
 import com.sawicka.neurosurvey.presenter.AuthPresenter;
 import com.sawicka.neurosurvey.utils.ImageLoadTask;
 import com.sawicka.neurosurvey.utils.MyAlert;
@@ -36,9 +38,12 @@ public class MainActivity extends FragmentActivity
 
     @BindView(R.id.logged_user_name) TextView user_name_value;
     @BindView(R.id.user_image) ImageView user_image;
+    @BindView(R.id.data_file_name) TextView data_file_name;
 
-    private AuthPresenter authPresenter = new AuthPresenter();
     private AppTempData appData;
+    private AuthPresenter authPresenter = new AuthPresenter();
+    private String userName;
+    private Metadata metadata;
 
     private static final int SIGN_IN = 1;
     private static final int RESOLVE_CONNECTION = 2; //trying to connect again
@@ -66,6 +71,10 @@ public class MainActivity extends FragmentActivity
         startActivity(intent);
     }
 
+    @OnClick(R.id.export_button)
+    public void export(){
+    }
+
     @OnClick(R.id.settings_button)
     public void settings(){
         Intent intent = new Intent(this, SettingsActivity.class);
@@ -79,13 +88,13 @@ public class MainActivity extends FragmentActivity
             authPresenter.clientConnect();
         } else if (requestCode == REQUEST_OPENER && resultCode == RESULT_OK) {
             this.appData.setDriveId((DriveId) data.getParcelableExtra(OpenFileActivityBuilder.EXTRA_RESPONSE_DRIVE_ID));
-            this.appData.getDriveId().asDriveFile()
-                    .open(authPresenter.getClient(), DriveFile.MODE_READ_ONLY, null)
-                    .setResultCallback(driveContentsCallbackOpenFile);
+            DriveFile file = Drive.DriveApi.getFile(authPresenter.getClient(), appData.getDriveId());
+            file.getMetadata(authPresenter.getClient()).setResultCallback(metadataRetrievedCallback);
         } else if (requestCode == SIGN_IN) {
             GoogleSignInAccount acct = authPresenter.getClientAuthorized(data);
             if (acct != null) {
                 user_name_value.setText("Hello, " + acct.getDisplayName());
+                userName = acct.getDisplayName();
                 if(acct.getPhotoUrl() != null)
                     new ImageLoadTask(acct.getPhotoUrl().toString(), user_image).execute();
             }
@@ -95,7 +104,7 @@ public class MainActivity extends FragmentActivity
     }
 
     @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         if (connectionResult.hasResolution()) {
             try {
                 connectionResult.startResolutionForResult(this, RESOLVE_CONNECTION);
@@ -107,22 +116,13 @@ public class MainActivity extends FragmentActivity
         }
     }
 
-    final ResultCallback<DriveApi.DriveContentsResult> driveContentsCallbackOpenFile =
-            new ResultCallback<DriveApi.DriveContentsResult>() {
-                @Override
-                public void onResult(DriveApi.DriveContentsResult result) {
-                    if (!result.getStatus().isSuccess()) {
-                        return;
-                    }
-                    ExcelWrite excelWrite = new ExcelWrite();
-                    excelWrite.getFileContent(result);
-                }
-            };
-
     final ResultCallback<DriveApi.DriveContentsResult> driveContentsCallback =
             new ResultCallback<DriveApi.DriveContentsResult>() {
         @Override
         public void onResult(DriveApi.DriveContentsResult result) {
+            if(!authPresenter.getClient().isConnected()){
+                authPresenter.clientConnect();
+            }
             IntentSender intentSender = Drive.DriveApi
                     .newOpenFileActivityBuilder()
                     .setSelectionFilter(Filters.contains(SearchableField.TITLE, ".xls"))
@@ -132,6 +132,19 @@ public class MainActivity extends FragmentActivity
             } catch (IntentSender.SendIntentException e) {
                 e.printStackTrace();
             }
+
         }
     };
+
+    final ResultCallback<DriveResource.MetadataResult> metadataRetrievedCallback = new
+            ResultCallback<DriveResource.MetadataResult>() {
+                @Override
+                public void onResult(@NonNull DriveResource.MetadataResult result) {
+                    if (!result.getStatus().isSuccess()) {
+                        return;
+                    }
+                    metadata = result.getMetadata();
+                    data_file_name.setText(metadata.getTitle());
+                }
+            };
 }

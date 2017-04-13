@@ -8,10 +8,12 @@ import com.sawicka.neurosurvey.model.Patient;
 
 import org.joda.time.LocalDate;
 
+import lombok.Getter;
+
 /**
  * Created by mloda on 16.03.17.
  */
-
+@Getter
 public class PatientPresenter implements Parcelable {
     private Patient patient;
 

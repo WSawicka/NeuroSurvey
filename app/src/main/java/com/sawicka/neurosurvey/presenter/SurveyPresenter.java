@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
-import android.widget.EditText;
 
 import com.sawicka.neurosurvey.enums.OtherAnswerEnum;
 import com.sawicka.neurosurvey.enums.questions.CheckQuestEnum;
@@ -12,24 +11,30 @@ import com.sawicka.neurosurvey.enums.questions.OtherQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.RadioQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.SeekQuestEnum;
 import com.sawicka.neurosurvey.model.Survey;
+import com.sawicka.neurosurvey.model.questions.CheckQuestion;
+import com.sawicka.neurosurvey.model.questions.OtherQuestion;
+import com.sawicka.neurosurvey.model.questions.Question;
+import com.sawicka.neurosurvey.model.questions.RadioSeekQuestion;
 import com.sawicka.neurosurvey.utils.MyAlert;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Getter;
+
 /**
  * Created by mloda on 20.03.17.
  */
-
+@Getter
 public class SurveyPresenter implements Parcelable {
     private Survey survey = new Survey();
 
     public void addNewRadioQuestion(Integer keyId, int position, Context context){
         String keyName = getRadioEnumName(keyId);
         if (keyName != null) {
-            List list = new ArrayList();
-            list.add(position + 1);
-            this.survey.addNew(keyName, list);
+            Question question = new RadioSeekQuestion();
+            question.setOne(position + 1);
+            this.survey.addNew(keyName, question);
         } else {
             new MyAlert().showAlertDialog("Did not found that radio item", context);
         }
@@ -40,18 +45,12 @@ public class SurveyPresenter implements Parcelable {
         if (keyName == null){
             new MyAlert().showAlertDialog("Did not found that check box", context);
         } else {
-            List list = this.survey.getQuestionList(keyName);
-            if (list == null) {
-                list = new ArrayList();
-                list.add(position + 1);
-            } else {
-                if (list.contains(position + 1)) {
-                    list.remove(position + 1);
-                } else {
-                    list.add(position + 1);
-                }
+            Question question = this.survey.getQuestion(keyName);
+            if (question == null) {
+                question = new CheckQuestion();
             }
-            this.survey.addNew(keyName, list);
+            question.setOne(position + 1);
+            this.survey.addNew(keyName, question);
         }
     }
 
@@ -60,13 +59,13 @@ public class SurveyPresenter implements Parcelable {
         if (keyName == null){
             new MyAlert().showAlertDialog("Did not found this seek bar", context);
         } else {
-            List list = new ArrayList();
-            list.add(progress);
-            this.survey.addNew(keyName, list);
+            Question question = new RadioSeekQuestion();
+            question.setOne(progress);
+            this.survey.addNew(keyName,question);
         }
     }
 
-    public void setOtherAnswersText(List<EditText> others, Context context){
+    /*public void setOtherAnswersText(List<EditText> others, Context context){
         for(EditText other : others){
             if(other.getText() != null) {
                 String keyName = getOtherAnswerName(other.getId());
@@ -86,7 +85,7 @@ public class SurveyPresenter implements Parcelable {
                 this.survey.addNew(keyName, list);
             }
         }
-    }
+    }*/
 
     public void setComments(String comments){
         this.survey.setComments(comments);
@@ -98,12 +97,12 @@ public class SurveyPresenter implements Parcelable {
             return;
         }
         if(keyName != null) {
-            List list = this.survey.getQuestionList(keyName);
-            if (list == null) {
-                list = new ArrayList();
+            Question question = this.survey.getQuestion(keyName);
+            if (question == null) {
+                question = new OtherQuestion();
             }
-            list.add(text);
-            this.survey.addNew(keyName, list);
+            question.setOne(text);
+            this.survey.addNew(keyName, question);
         } else {
             new MyAlert().showAlertDialog("List not found", context);
         }
@@ -112,9 +111,15 @@ public class SurveyPresenter implements Parcelable {
     public List<String> getList(Integer id, Context context){
         String keyName = getOtherQuestName(id);
         if(keyName != null) {
-            List<String> list = this.survey.getQuestionList(keyName);
-            return (list == null) ?
-                    new ArrayList<String>() : list;
+            Question question = this.survey.getQuestion(keyName);
+            if(question instanceof OtherQuestion) {
+                List<String> list = (List<String>) question.getAll();
+                return (list == null) ?
+                        new ArrayList<String>() : list;
+            } else {
+                new MyAlert().showAlertDialog("Wrong question type found!", context);
+                return null;
+            }
         } else {
             new MyAlert().showAlertDialog("List not found", context);
             return new ArrayList<>();

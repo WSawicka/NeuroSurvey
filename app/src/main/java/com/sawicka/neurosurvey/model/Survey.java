@@ -3,25 +3,30 @@ package com.sawicka.neurosurvey.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.HashMap;
-import java.util.List;
+import com.sawicka.neurosurvey.model.questions.Question;
+
+import java.util.LinkedHashMap;
 import java.util.Map;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created by mloda on 15.03.17.
  */
-
+@Getter
+@Setter
 public class Survey implements Parcelable {
-    private Map<String, List> questions;
+    private Map<String, Question> questions;
     private String comments;
 
     public Survey(){
-        this.questions = new HashMap<>();
+        this.questions = new LinkedHashMap<>();
     }
 
     protected Survey(Parcel in) {
         if(this.questions == null)
-            this.questions = new HashMap<>();
+            this.questions = new LinkedHashMap<>();
         this.comments = in.readString();
     }
 
@@ -37,24 +42,16 @@ public class Survey implements Parcelable {
         }
     };
 
-    public void addNew(String key, List list){
+    public void addNew(String key, Question question){
         try {
-            this.questions.put(key, list);
+            this.questions.put(key, question);
         } catch (Exception ex){
             ex.printStackTrace();
         }
     }
 
-    public List getQuestionList(String key){
+    public Question getQuestion(String key){
         return this.questions.get(key);
-    }
-
-    public void setComments(String comments){
-        this.comments = comments;
-    }
-
-    public String getComments(){
-        return this.comments;
     }
 
     @Override

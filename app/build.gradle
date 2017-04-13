@@ -49,8 +49,8 @@ dependencies {
         exclude group: 'org.apache.httpcomponents'
     }
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
-    compile 'org.jxls:jxls:2.4.0'
-    compile 'org.jxls:jxls-jexcel:1.0.6'
+    // https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl
+    compile group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
 }
 
 

@@ -16,16 +16,17 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AppTempData implements Parcelable {
-    //private AuthPresenter authPresenter;
     private PatientPresenter patientPresenter;
     private SurveyPresenter surveyPresenter;
     private DriveId driveId;
+    private int lastRowNum;
 
     public AppTempData(){
-        //this.authPresenter = new AuthPresenter();
         this.patientPresenter = new PatientPresenter();
         this.surveyPresenter = new SurveyPresenter();
+        this.lastRowNum = 0;
     }
+
 
     @Override
     public int describeContents() {
@@ -34,18 +35,17 @@ public class AppTempData implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        //dest.writeParcelable(this.authPresenter, flags);
         dest.writeParcelable(this.patientPresenter, flags);
         dest.writeParcelable(this.surveyPresenter, flags);
+        dest.writeParcelable(this.driveId, flags);
+        dest.writeInt(this.lastRowNum);
     }
 
     protected AppTempData(Parcel in) {
-        //this.authPresenter = in.readParcelable(AuthPresenter.class.getClassLoader());
-        if(this.patientPresenter == null) this.patientPresenter = new PatientPresenter();
-        if(this.surveyPresenter == null) this.surveyPresenter = new SurveyPresenter();
-
         this.patientPresenter = in.readParcelable(PatientPresenter.class.getClassLoader());
         this.surveyPresenter = in.readParcelable(SurveyPresenter.class.getClassLoader());
+        this.driveId = in.readParcelable(DriveId.class.getClassLoader());
+        this.lastRowNum = 0;
     }
 
     public static final Parcelable.Creator<AppTempData> CREATOR = new Parcelable.Creator<AppTempData>() {
