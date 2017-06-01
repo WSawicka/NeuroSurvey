@@ -48,6 +48,10 @@ public class AuthPresenter{
         this.client.connect();
     }
 
+    public void clientDisconnect() {
+        this.client.disconnect();
+    }
+
     public Intent startSignInActivity(){
         return Auth.GoogleSignInApi.getSignInIntent(this.client);
     }

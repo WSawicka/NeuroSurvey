@@ -39,7 +39,7 @@
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q2b"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
-        <EditText android:id="@+id/other_2b"
+        <AutoCompleteTextView android:id="@+id/other_2b"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:hint="@string/other" android:inputType="textMultiLine"/>
 
@@ -94,7 +94,7 @@
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q9"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="multipleChoice"/>
-        <EditText android:id="@+id/other_9"
+        <AutoCompleteTextView android:id="@+id/other_9"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:hint="@string/other" android:inputType="textMultiLine"/>
 
@@ -111,7 +111,7 @@
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q11"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="singleChoice"/>
-        <EditText android:id="@+id/other_11"
+        <AutoCompleteTextView android:id="@+id/other_11"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:hint="@string/other" android:inputType="textMultiLine"/>
 
@@ -120,7 +120,7 @@
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/added_listView_12"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <EditText android:id="@+id/edit_text_12"
+        <AutoCompleteTextView android:id="@+id/auto_complete_12"
             android:layout_width="match_parent" android:layout_height="wrap_content" />
         <Button android:id="@+id/button_add_12"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -221,7 +221,7 @@
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q23"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="multipleChoice"/>
-        <EditText android:id="@+id/other_23"
+        <AutoCompleteTextView android:id="@+id/other_23"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:hint="@string/other" android:inputType="textMultiLine"/>
 
@@ -231,7 +231,7 @@
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q24"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="multipleChoice"/>
-        <EditText android:id="@+id/other_24"
+        <AutoCompleteTextView android:id="@+id/other_24"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:hint="@string/other" android:inputType="textMultiLine"/>
 
@@ -240,7 +240,7 @@
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/added_listView_25"
             android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        <EditText android:id="@+id/edit_text_25"
+        <AutoCompleteTextView android:id="@+id/auto_complete_25"
             android:layout_width="match_parent" android:layout_height="wrap_content" />
         <Button android:id="@+id/button_add_25"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -378,7 +378,7 @@
         <com.sawicka.neurosurvey.utils.NoScrollListView android:id="@+id/lv_q31"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:choiceMode="multipleChoice"/>
-        <EditText android:id="@+id/other_31"
+        <AutoCompleteTextView android:id="@+id/other_31"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:hint="@string/other" android:inputType="textMultiLine"/>
 

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -21,6 +22,8 @@ import com.google.android.gms.drive.DriveFile;
 import com.sawicka.neurosurvey.AppTempData;
 import com.sawicka.neurosurvey.R;
 import com.sawicka.neurosurvey.enums.questions.CheckQuestEnum;
+import com.sawicka.neurosurvey.enums.questions.OtherAnswerEnum;
+import com.sawicka.neurosurvey.enums.questions.OtherQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.RadioQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.SeekQuestEnum;
 import com.sawicka.neurosurvey.file.ExcelRead;
@@ -29,7 +32,9 @@ import com.sawicka.neurosurvey.presenter.AuthPresenter;
 import com.sawicka.neurosurvey.presenter.SurveyPresenter;
 import com.sawicka.neurosurvey.utils.NoScrollListView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -37,28 +42,24 @@ import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import jxl.Cell;
 
 public class NewTestActivity extends FragmentActivity
         implements GoogleApiClient.OnConnectionFailedListener {
     private AppTempData appData;
     private SurveyPresenter presenter;
     private AuthPresenter authPresenter = new AuthPresenter();
-    private List<Cell[]> rows;
     private GoogleApiClient client;
 
     @BindViews({R.id.other_2b, R.id.other_9, R.id.other_11, R.id.other_23, R.id.other_24, R.id.other_31})
-    List<EditText> others;
-    @BindView(R.id.added_listView_12)
-    NoScrollListView added_lv_12;
-    @BindView(R.id.added_listView_25)
-    NoScrollListView added_lv_25;
-    @BindView(R.id.edit_text_12)
-    EditText edit_text_12;
-    @BindView(R.id.edit_text_25)
-    EditText edit_text_25;
-    @BindView(R.id.comments)
-    EditText comments;
+    List<AutoCompleteTextView> others;
+
+    @BindView(R.id.added_listView_12) NoScrollListView added_lv_12;
+    @BindView(R.id.added_listView_25) NoScrollListView added_lv_25;
+
+    @BindView(R.id.auto_complete_12) AutoCompleteTextView auto_complete_12;
+    @BindView(R.id.auto_complete_25) AutoCompleteTextView auto_complete_25;
+
+    @BindView(R.id.comments) EditText comments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,21 +67,51 @@ public class NewTestActivity extends FragmentActivity
         setContentView(R.layout.activity_new_test);
         ButterKnife.bind(this);
 
+        setDataAndPresenters();
+        setViewsAndLabels();
+
+        OtherAnswerEnum[] enums = OtherAnswerEnum.values();
+        for(OtherAnswerEnum en : enums) {
+            String key = en.name();
+            ArrayList<String> answers = new ArrayList<>(this.appData.getCommonAnswers().get(key));
+            Collections.sort(answers);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, answers);
+            AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(en.getId());
+            actv.setAdapter(adapter);
+            actv.setThreshold(1);
+        }
+
+        OtherQuestEnum[] enumsQuest = OtherQuestEnum.values();
+        for(OtherQuestEnum en : enumsQuest) {
+            String key = en.name();
+            ArrayList<String> answers = new ArrayList<>(this.appData.getCommonAnswers().get(key));
+            Collections.sort(answers);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, answers);
+            AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(en.getAutocompleteId());
+            actv.setAdapter(adapter);
+            actv.setThreshold(1);
+        }
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        this.client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    }
+
+    private void setDataAndPresenters(){
         this.appData = getIntent().getParcelableExtra("APP_DATA");
         this.presenter = this.appData.getSurveyPresenter();
         this.authPresenter.setUpClient(this, getApplicationContext());
         this.authPresenter.clientConnect();
 
         this.appData.getDriveId().asDriveFile()
-                .open(authPresenter.getClient(), DriveFile.MODE_READ_ONLY, null)
+                .open(this.authPresenter.getClient(), DriveFile.MODE_READ_ONLY, null)
                 .setResultCallback(driveContentsCallbackOpenFile);
+    }
 
+    private void setViewsAndLabels(){
         setRadioListViews();
         setCheckListViews();
         setSeekBarLabels();
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void setRadioListViews() {
@@ -124,20 +155,20 @@ public class NewTestActivity extends FragmentActivity
 
     @OnClick(R.id.button_add_12)
     public void addToListView12() {
-        presenter.addNewToListView(added_lv_12.getId(), edit_text_12.getText().toString(), getApplicationContext());
+        presenter.addNewToListView(added_lv_12.getId(), auto_complete_12.getText().toString(), getApplicationContext());
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.label_view_added_text,
                 presenter.getList(added_lv_12.getId(), getApplicationContext()));
         added_lv_12.setAdapter(adapter);
-        edit_text_12.setText("");
+        auto_complete_12.setText("");
     }
 
     @OnClick(R.id.button_add_25)
     public void addToListView25() {
-        presenter.addNewToListView(added_lv_25.getId(), edit_text_25.getText().toString(), getApplicationContext());
+        presenter.addNewToListView(added_lv_25.getId(), auto_complete_25.getText().toString(), getApplicationContext());
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, R.layout.label_view_added_text,
                 presenter.getList(added_lv_25.getId(), getApplicationContext()));
         added_lv_25.setAdapter(adapter);
-        edit_text_25.setText("");
+        auto_complete_25.setText("");
     }
 
     public SeekBar.OnSeekBarChangeListener getSeekBarListener() {
@@ -177,13 +208,17 @@ public class NewTestActivity extends FragmentActivity
 
     @OnClick(R.id.button_save)
     public void handleSave() {
-        //presenter.setOtherAnswersText(others, getApplicationContext());
+        //overwriting normal questions by other (if other questions are not empty)
+        presenter.setOtherAnswersText(others, getApplicationContext());
+
         if (comments.getText() != null)
             presenter.setComments(comments.getText().toString());
 
         this.appData.getDriveId().asDriveFile()
                 .open(authPresenter.getClient(), DriveFile.MODE_WRITE_ONLY, null)
                 .setResultCallback(driveContentsCallbackOpenWrite);
+
+        this.finish();
     }
 
     final ResultCallback<DriveApi.DriveContentsResult> driveContentsCallbackOpenFile =
@@ -193,7 +228,7 @@ public class NewTestActivity extends FragmentActivity
                     if (!result.getStatus().isSuccess()) { return; }
                     ExcelRead excelRead = new ExcelRead(result);
                     try {
-                        rows = excelRead.execute().get();
+                        appData.setRows(excelRead.execute().get());
                     } catch (InterruptedException | ExecutionException e) {
                         e.printStackTrace();
                     }
@@ -207,14 +242,12 @@ public class NewTestActivity extends FragmentActivity
                     if (!result.getStatus().isSuccess()) {
                         return;
                     }
-                    ExcelWrite excelWrite = new ExcelWrite(result, authPresenter.getClient(), rows,
+                    ExcelWrite excelWrite = new ExcelWrite(result, authPresenter.getClient(), appData.getRows(),
                             appData, getApplicationContext(), getResources());
                     excelWrite.execute();
                 }
             };
 
     @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {}
 }

@@ -9,6 +9,7 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -50,7 +51,7 @@ dependencies {
     }
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
     // https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl
-    compile group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
+    compile group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6'
 }
 
 

@@ -4,14 +4,17 @@ import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
+import android.widget.AutoCompleteTextView;
+import android.widget.EditText;
 
-import com.sawicka.neurosurvey.enums.OtherAnswerEnum;
+import com.sawicka.neurosurvey.enums.questions.OtherAnswerEnum;
 import com.sawicka.neurosurvey.enums.questions.CheckQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.OtherQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.RadioQuestEnum;
 import com.sawicka.neurosurvey.enums.questions.SeekQuestEnum;
 import com.sawicka.neurosurvey.model.Survey;
 import com.sawicka.neurosurvey.model.questions.CheckQuestion;
+import com.sawicka.neurosurvey.model.questions.OtherAnswerQuestion;
 import com.sawicka.neurosurvey.model.questions.OtherQuestion;
 import com.sawicka.neurosurvey.model.questions.Question;
 import com.sawicka.neurosurvey.model.questions.RadioSeekQuestion;
@@ -65,7 +68,7 @@ public class SurveyPresenter implements Parcelable {
         }
     }
 
-    /*public void setOtherAnswersText(List<EditText> others, Context context){
+    public void setOtherAnswersText(List<AutoCompleteTextView> others, Context context){
         for(EditText other : others){
             if(other.getText() != null) {
                 String keyName = getOtherAnswerName(other.getId());
@@ -77,15 +80,15 @@ public class SurveyPresenter implements Parcelable {
                     return;
                 }
 
-                List list = this.survey.getQuestionList(keyName);
-                if(list == null){
-                    list = new ArrayList();
-                }
-                list.add(text);
-                this.survey.addNew(keyName, list);
+                Question question = this.survey.getQuestion(keyName);
+                 if (question == null || !(question instanceof OtherAnswerQuestion)){
+                     question = new OtherAnswerQuestion();
+                 }
+                question.setOne(text);
+                this.survey.addNew(keyName, question);
             }
         }
-    }*/
+    }
 
     public void setComments(String comments){
         this.survey.setComments(comments);
@@ -159,7 +162,7 @@ public class SurveyPresenter implements Parcelable {
     @Nullable
     private String getOtherQuestName(Integer id){
         for(int i = 0; i < OtherQuestEnum.values().length; i++){
-            int enumId = OtherQuestEnum.values()[i].getLv_id();
+            int enumId = OtherQuestEnum.values()[i].getId();
             if(enumId == id) {
                 return OtherQuestEnum.values()[i].name();
             }

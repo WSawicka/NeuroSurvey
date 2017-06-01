@@ -5,6 +5,7 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,7 +25,6 @@ import com.google.android.gms.drive.query.Filters;
 import com.google.android.gms.drive.query.SearchableField;
 import com.sawicka.neurosurvey.AppTempData;
 import com.sawicka.neurosurvey.R;
-import com.sawicka.neurosurvey.SettingsActivity;
 import com.sawicka.neurosurvey.presenter.AuthPresenter;
 import com.sawicka.neurosurvey.utils.ImageLoadTask;
 import com.sawicka.neurosurvey.utils.MyAlert;
@@ -39,6 +39,7 @@ public class MainActivity extends FragmentActivity
     @BindView(R.id.logged_user_name) TextView user_name_value;
     @BindView(R.id.user_image) ImageView user_image;
     @BindView(R.id.data_file_name) TextView data_file_name;
+    @BindView(R.id.logging_button) Button logging_Button;
 
     private AppTempData appData;
     private AuthPresenter authPresenter = new AuthPresenter();
@@ -55,13 +56,30 @@ public class MainActivity extends FragmentActivity
         this.appData = new AppTempData();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         authPresenter.setUpClient(this, getApplicationContext());
-        authPresenter.clientConnect();
-        startActivityForResult(authPresenter.startSignInActivity(), SIGN_IN);
+    }
 
-        Drive.DriveApi.newDriveContents(this.authPresenter.getClient())
-                .setResultCallback(driveContentsCallback);
+    @OnClick(R.id.select_file)
+    public void selectFile(){
+        if(userName != null){
+            Drive.DriveApi.newDriveContents(this.authPresenter.getClient())
+                    .setResultCallback(driveContentsCallback);
+        }
+    }
+
+    @OnClick(R.id.logging_button)
+    public void logging(){
+        if (userName == null) {
+            authPresenter.clientConnect();
+            startActivityForResult(authPresenter.startSignInActivity(), SIGN_IN);
+        } else {
+            authPresenter.clientDisconnect();
+            user_name_value.setText("");
+            userName = null;
+            user_image.setImageBitmap(null);
+            data_file_name.setText("");
+            logging_Button.setText("Log me!");
+        }
     }
 
     @OnClick(R.id.new_test_button)
@@ -71,8 +89,11 @@ public class MainActivity extends FragmentActivity
         startActivity(intent);
     }
 
-    @OnClick(R.id.export_button)
-    public void export(){
+    @OnClick(R.id.history_button)
+    public void history(){
+        Intent intent = new Intent(this, HistoryActivity.class);
+        intent.putExtra("APP_DATA", this.appData);
+        startActivity(intent);
     }
 
     @OnClick(R.id.settings_button)
@@ -93,10 +114,11 @@ public class MainActivity extends FragmentActivity
         } else if (requestCode == SIGN_IN) {
             GoogleSignInAccount acct = authPresenter.getClientAuthorized(data);
             if (acct != null) {
-                user_name_value.setText("Hello, " + acct.getDisplayName());
+                user_name_value.setText("You're logged as: \n" + acct.getDisplayName());
                 userName = acct.getDisplayName();
                 if(acct.getPhotoUrl() != null)
                     new ImageLoadTask(acct.getPhotoUrl().toString(), user_image).execute();
+                logging_Button.setText("Log out");
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

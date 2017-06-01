@@ -11,6 +11,7 @@ import com.sawicka.neurosurvey.enums.questions.CheckQuestEnum;
 import com.sawicka.neurosurvey.model.Patient;
 import com.sawicka.neurosurvey.model.Survey;
 import com.sawicka.neurosurvey.model.questions.CheckQuestion;
+import com.sawicka.neurosurvey.model.questions.OtherAnswerQuestion;
 import com.sawicka.neurosurvey.model.questions.OtherQuestion;
 import com.sawicka.neurosurvey.model.questions.Question;
 import com.sawicka.neurosurvey.model.questions.RadioSeekQuestion;
@@ -65,6 +66,7 @@ public class ExcelWrite extends AsyncTask<Void, Void, Void>{
             int lastRow = fillPreviousData(sheet, rows) + 1;
             setPatientData(sheet, lastRow, appData.getPatientPresenter().getPatient());
             setSurveyData(sheet, lastRow, appData.getSurveyPresenter().getSurvey());
+            setComments(sheet, lastRow, appData.getSurveyPresenter().getSurvey().getComments());
 
             wrwb.write();
             wrwb.close();
@@ -82,7 +84,12 @@ public class ExcelWrite extends AsyncTask<Void, Void, Void>{
         int lastRow = -1;
         for(Cell[] cells : rows){
             for (Cell cell : cells) {
-                sheet.addCell(new Label(cell.getColumn(), cell.getRow(), cell.getContents()));
+                try{
+                    double value = Double.parseDouble(cell.getContents());
+                    sheet.addCell(new Number(cell.getColumn(), cell.getRow(), value));
+                } catch (NumberFormatException nfex){
+                    sheet.addCell(new Label(cell.getColumn(), cell.getRow(), cell.getContents()));
+                }
                 if (lastRow < cell.getRow()) lastRow = cell.getRow();
             }
         }
@@ -116,11 +123,10 @@ public class ExcelWrite extends AsyncTask<Void, Void, Void>{
                 setRadioSeekQuestion(sheet, lastRow, key, question);
             } else if (question instanceof CheckQuestion) {
                 setCheckQuestion(sheet, lastRow, key, question);
-            } else if (question instanceof OtherQuestion) {
+            } else if (question instanceof OtherQuestion || question instanceof OtherAnswerQuestion) {
                 setOtherQuestion(sheet, lastRow, key, question);
             }
         }
-        // TODO: sprawdź, czy nie ma opcji "other"!!!
     }
 
     private void setRadioSeekQuestion(WritableSheet sheet, int lastRow, String key, Question question){
@@ -137,7 +143,7 @@ public class ExcelWrite extends AsyncTask<Void, Void, Void>{
     }
 
     private void setCheckQuestion(WritableSheet sheet, int lastRow, String key, Question question){
-        //Pytania -> 1; sprawdź, które to są (numer checkbox x pytania Y odpowiada numerowi w kolumnie Y_x)
+        //numer checkbox x pytania Y odpowiada numerowi w kolumnie Y_x
         //te których brakuje -> 0
         List<Integer> answers = (List<Integer>) question.getDataToFile();
         int optionsListId = CheckQuestEnum.valueOf(key).getOptionsArrayId();
@@ -168,6 +174,17 @@ public class ExcelWrite extends AsyncTask<Void, Void, Void>{
             }
         } else {
             new MyAlert().showAlertDialog("Error while getting col labels!", context);
+        }
+    }
+
+    private void setComments(WritableSheet sheet, int lastRow, String comments){
+        int col = getColumnNumberWith(rows.get(0), "Comments");
+        if(col >= 0) {
+            try {
+                sheet.addCell(new Label(col, lastRow, comments));
+            } catch(WriteException ex) {
+                new MyAlert().showAlertDialog("Error while getting col labels", context);
+            }
         }
     }
 

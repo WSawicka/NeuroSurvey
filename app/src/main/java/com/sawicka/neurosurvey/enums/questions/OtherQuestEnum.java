@@ -9,11 +9,13 @@ import lombok.Getter;
  */
 @Getter
 public enum OtherQuestEnum {
-    Q12(R.id.added_listView_12), Q25(R.id.added_listView_25);
+    Q12(R.id.added_listView_12, R.id.auto_complete_12), Q25(R.id.added_listView_25, R.id.auto_complete_25);
 
-    Integer lv_id;
+    Integer id;
+    Integer autocompleteId;
 
-    OtherQuestEnum(Integer id){
-        this.lv_id = id;
+    OtherQuestEnum(Integer id, Integer autocompleteId){
+        this.id = id;
+        this.autocompleteId = autocompleteId;
     }
 }

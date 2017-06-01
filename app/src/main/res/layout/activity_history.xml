@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:paddingLeft="20dp"
+    android:paddingRight="18dp"
+    android:paddingTop="22dp"
+    android:paddingBottom="22dp"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.sawicka.neurosurvey.activity.MainActivity"
+    android:orientation="vertical">
+    <ListView android:id="@+id/history_patients_list_view"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>
